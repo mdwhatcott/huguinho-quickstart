@@ -1,10 +1,10 @@
 date:   2000-01-01
 slug:   /about/
 topics: 
-title:  Jim Henson
+title:  Michael Whatcott
 intro:
 draft:  false
 
 +++
 
-Hi! My name is Jim Henson Here. This is my website.
+Hi! My name is Michael Whatcott Here. This is my website.
