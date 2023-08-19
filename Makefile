@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
 dev:
-	echo "Navigate a browser to http://localhost:7070/" && \
-		huguinho-dev -base-path "/asdf" -content "./content" -templates "./templates" -target "./docs" -with-drafts -with-future
+	echo "Navigate in a browser to http://localhost:7070/" && \
+		huguinho-dev -content "./content" -templates "./templates" -target "./dev" -with-drafts -with-future
 
 generate:
-	huguinho -base-path "/asdf" -content "./content" -templates "./templates" -target "./docs"
+	huguinho -base-path "/blog" -content "./content" -templates "./templates" -target "./docs"
 
 clean:
 	rm -rf "./rendered" && mkdir "./docs"
