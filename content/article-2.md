@@ -1,4 +1,4 @@
-date:   2022-03-21
+date:   2023-03-21
 slug:   /the-second-post/
 topics: topic-1
 title:  The Second Post
@@ -7,4 +7,4 @@ draft:  false
 
 +++
 
-This is another very economically written article.
+This is another very economically written article. Here's the [first](/the-first-post/).

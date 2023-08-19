@@ -1,11 +1,22 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Your Name Here - {{ .Title }}</title>
+        <title>Michael Whatcott - {{ .Title }}</title>
 {{ template "header.tmpl" . }}
-{{ template "highlight-js.tmpl" . }}
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/atom-one-light.min.css"
+            media="screen" />
+          <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/atom-one-dark.min.css"
+            media="screen and (prefers-color-scheme: dark)" />
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/clojure.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/clojure-repl.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <meta name="description" content="{{ .Intro }}">
-        <link rel="canonical" href="https://your-domain-here.com{{ .Slug }}">
+        <link rel="canonical" href="https://michaelwhatcott.com{{ .Slug }}">
         <style>
 {{ template "css.tmpl" }}
         </style>
@@ -14,13 +25,10 @@
     <body>
 {{ if ne (.Date.Format "2006-01-02") "2000-01-01" }}
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
+            <a href="/">Home</a>
   {{ range .Topics }}
-                <li><a href="/topics/#{{ . }}">{{ . }}</a></li>
-{{ end }}
-            </ul>
-            <div class="clear"></div>
+            ~ <a href="/topics/#{{ . }}">{{ . }}</a>
+  {{ end }}
         </nav>
 {{ end }}
 
@@ -34,16 +42,14 @@
 
             <div>
 {{ .Content }}
+
+{{ if ne (.Date.Format "2006-01-02") "2000-01-01" }}
+            <p><i>-Michael Whatcott</i></p>
+{{ end }}
             </div>
         </div>
 
         <br>
         <br>
-
-{{ if ne (.Date.Format "2006-01-02") "2000-01-01" }}
-        <footer>
-  {{ template "footer.tmpl" . }}
-        </footer>
-{{ end }}
     </body>
 </html>
