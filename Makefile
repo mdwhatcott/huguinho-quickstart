@@ -5,7 +5,9 @@ dev:
 		huguinho-dev -content "./content" -templates "./templates" -target "./dev" -with-drafts -with-future
 
 generate:
-	huguinho -base-path "/blog" -content "./content" -templates "./templates" -target "./docs"
+	huguinho -base-path "/huguinho-quickstart" -content "./content" -templates "./templates" -target "./docs"
 
 clean:
 	rm -rf "./rendered" && mkdir "./docs"
+
+.PHONY: dev generate clean
